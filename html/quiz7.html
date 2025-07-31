@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Explorer - Activity Preference</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <span>Nepal Explorer</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="quiz-header">
+        <h2>Please choose the answer</h2>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-progress-container">
+            <div class="quiz-progress">
+                <div class="progress-bar" style="width: 70%"></div>
+            </div>
+            <div class="progress-text">Question 7 of 10</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-icon">
+                <i class="fas fa-hiking"></i>
+            </div>
+            <h2 class="question-title">What activity do you enjoy the most?</h2>
+            <p class="question-subtitle">Choose your preferred activity type</p>
+            
+            <div class="options-grid">
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Hiking">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Hiking</h3>
+                            <p>Trekking through scenic mountain trails</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Sightseeing">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Sightseeing</h3>
+                            <p>Exploring landmarks and cultural sites</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Spiritual">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-om"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Spiritual</h3>
+                            <p>Visiting temples and spiritual centers</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Meditation">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Meditation</h3>
+                            <p>Peaceful meditation and mindfulness</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Wildlife Safari">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Wildlife Safari</h3>
+                            <p>Exploring wildlife and nature reserves</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label class="option-card">
+                    <input type="radio" name="activity" value="Tea/Coffee exploration">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Tea/Coffee exploration</h3>
+                            <p>Exploring tea gardens and coffee culture</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioButtons = document.querySelectorAll('input[name="activity"]');
+            
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.checked) {
+                        localStorage.setItem('activity', this.value);
+                        
+                        setTimeout(() => {
+                            window.location.href = 'quiz8.html';
+                        }, 1000);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

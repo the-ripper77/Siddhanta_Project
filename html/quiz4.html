@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Explorer - Duration Selection</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <span>Nepal Explorer</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="quiz-header">
+        <h2>Please choose the answer</h2>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-progress-container">
+            <div class="quiz-progress">
+                <div class="progress-bar" style="width: 40%"></div>
+            </div>
+            <div class="progress-text">Question 4 of 10</div>
+        </div>
+
+        <div class="question-container">
+            <div class="question-icon">
+                <i class="fas fa-calendar-day"></i>
+            </div>
+            <h2 class="question-title">How many days can you travel?</h2>
+            <p class="question-subtitle">Enter the number of days for your trip (e.g., 3-14)</p>
+            
+            <div class="options-grid">
+                <div class="option-card">
+                    <div class="option-content">
+                        <div class="option-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="option-text">
+                            <h3>Duration</h3>
+                            <input type="number" id="days" name="days" min="1" max="30" placeholder="Enter number of days" 
+                                   style="width: 150px; padding: 8px; border: 2px solid #667eea; border-radius: 8px; font-size: 14px; text-align: center; margin-top: 5px;">
+                            <p style="margin-top: 5px; color: #666; font-size: 0.8rem;">Enter a number between 1-30</p>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const daysInput = document.getElementById('days');
+            
+            daysInput.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                if (value >= 1 && value <= 30) {
+                    localStorage.setItem('days', this.value);
+                    
+                    setTimeout(() => {
+                        window.location.href = 'quiz5.html';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
