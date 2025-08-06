@@ -95,7 +95,7 @@ const destinations = [
         Best_Season: "Spring",
         Setting: "Rural",
         Activities: "Trekking, Sightseeing, Photography",
-        Image_URL: "",
+        Image_URL: "https://media.nepaltrekadventures.com/uploads/img/annapurna-base-camp-in-nepal-1.webp",
         Description: "Annapurna Base Camp is one of the most famous trekking destinations in Nepal. The journey takes visitors through green forests, traditional Gurung villages, and dramatic mountain landscapes, ending with breathtaking views of Annapurna I and surrounding peaks."
     },
     {
@@ -131,7 +131,7 @@ const destinations = [
         Best_Season: "Winter",
         Setting: "Rural",
         Activities: "Trekking/Hiking",
-        Image_URL: "https://images.followalice.com/1na49vMV6d1mvHSlxeO75R/41206d2119efc572bf40227280aa86ef/Hotel_Everest_View.jpeg?q=80&fit=fill&f=center&w=1200&h=638",
+        Image_URL: "https://images.touristlink.com/repository/V/I/E/W/F/R/O/M/view-from-everest-hotel-on-day-4.jpg",
         Description: "Everest View Point in Namche Bazaar offers some of the best close-up views of Mount Everest. It is a highlight for trekkers in the Khumbu region, combining incredible Himalayan landscapes with the culture and hospitality of the Sherpa people."
     }
 ];
