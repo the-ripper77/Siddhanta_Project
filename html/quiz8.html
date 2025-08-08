@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nepal Explorer - Travel Companion Preference</title>
+    <title>Nepal Explorer - Atmosphere Selection</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -29,67 +29,54 @@
     <div class="quiz-container">
         <div class="quiz-progress-container">
             <div class="quiz-progress">
-                <div class="progress-bar" style="width: 80%"></div>
+                <div class="progress-bar" style="width: 100%"></div>
             </div>
-            <div class="progress-text">Question 8 of 10</div>
+            <div class="progress-text">Question 8 of 8</div>
         </div>
 
         <div class="question-container">
             <div class="question-icon">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-volume-up"></i>
             </div>
-            <h2 class="question-title">Whom do you prefer to travel with?</h2>
-            <p class="question-subtitle">Choose your preferred travel companion</p>
+            <h2 class="question-title">Thank you for completing the quiz!</h2>
+            <p class="question-subtitle">Click any option to see your personalized destination recommendation</p>
             
             <div class="options-grid">
                 <label class="option-card">
-                    <input type="radio" name="travel_companion" value="Family">
+                    <input type="radio" name="final" value="View Results">
                     <div class="option-content">
                         <div class="option-icon">
-                            <i class="fas fa-home"></i>
+                            <i class="fas fa-star"></i>
                         </div>
                         <div class="option-text">
-                            <h3>Family</h3>
-                            <p>Traveling with family members</p>
+                            <h3>View My Results</h3>
+                            <p>See your personalized destination recommendation</p>
                         </div>
                     </div>
                 </label>
                 
                 <label class="option-card">
-                    <input type="radio" name="travel_companion" value="Friends">
+                    <input type="radio" name="final" value="View Results">
                     <div class="option-content">
                         <div class="option-icon">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
                         <div class="option-text">
-                            <h3>Friends</h3>
-                            <p>Group adventure with friends</p>
+                            <h3>Get Recommendation</h3>
+                            <p>Discover your perfect Nepal destination</p>
                         </div>
                     </div>
                 </label>
                 
                 <label class="option-card">
-                    <input type="radio" name="travel_companion" value="Solo">
+                    <input type="radio" name="final" value="View Results">
                     <div class="option-content">
                         <div class="option-icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-compass"></i>
                         </div>
                         <div class="option-text">
-                            <h3>Solo</h3>
-                            <p>Traveling alone for personal discovery</p>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="option-card">
-                    <input type="radio" name="travel_companion" value="Couple">
-                    <div class="option-content">
-                        <div class="option-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="option-text">
-                            <h3>Couple</h3>
-                            <p>Romantic getaway with your partner</p>
+                            <h3>Find My Destination</h3>
+                            <p>Let's find your ideal travel spot</p>
                         </div>
                     </div>
                 </label>
@@ -99,15 +86,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const radioButtons = document.querySelectorAll('input[name="travel_companion"]');
+            const radioButtons = document.querySelectorAll('input[name="final"]');
             
             radioButtons.forEach(radio => {
                 radio.addEventListener('change', function() {
                     if (this.checked) {
-                        localStorage.setItem('travel_companion', this.value);
+                        localStorage.setItem('final', this.value);
                         
                         setTimeout(() => {
-                            window.location.href = 'quiz9.html';
+                            window.location.href = 'result.html';
                         }, 1000);
                     }
                 });

@@ -126,7 +126,7 @@ const destinations = [
         Description: "Nagarkot is a peaceful hill station near Kathmandu, famous for its sunrise views over the Himalayas. Visitors can enjoy nature walks, cycling, and quiet escapes surrounded by fresh mountain air and breathtaking scenery."
     },
     {
-        Place: "Everest View Point (Namche Bazaar)",
+        Place: "Everest View Point (Namche Bazaar",
         Budget: "High",
         Best_Season: "Winter",
         Setting: "Rural",
@@ -335,6 +335,26 @@ function displayResults() {
         
         if (!preferences.activity && destination.Activities.split(/,\s*|\//).length > 2) {
             score += 1;
+        }
+        
+        // Special scoring for Cold climate preference
+        if (preferences.climate === "Cold") {
+            // Increase probability for cold-weather destinations
+            const coldDestinations = ["Mustang", "Annapurna Base Camp", "Everest View Point (Namche Bazaar)"];
+            if (coldDestinations.includes(destination.Place)) {
+                score += 5; // Significant boost for cold climate preference
+                console.log(`Cold climate boost applied to ${destination.Place}: +5 points`);
+            }
+            
+            // Additional boost for high-altitude and rural destinations that are typically cold
+            if (destination.Setting === "Rural" && destination.Best_Season === "Winter") {
+                score += 2;
+            }
+            
+            // Boost for trekking activities which are common in cold regions
+            if (destination.Activities.toLowerCase().includes("trekking")) {
+                score += 2;
+            }
         }
         
         return { ...destination, score };
